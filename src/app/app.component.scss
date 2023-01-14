@@ -1,0 +1,17 @@
+.background {
+    background-image: url(/../assets/images/topography_background.jpg);
+}
+
+.header-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    background-color: white;
+}
+
+img {
+    margin-left: 2em;
+    width: 20%;
+    padding: 1em;
+}
