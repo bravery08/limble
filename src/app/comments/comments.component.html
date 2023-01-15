@@ -6,7 +6,8 @@
           <textarea 
           matInput placeholder="Leave comments here..." 
           style="color: white;"
-          [(ngModel)]="comment">
+          [(ngModel)]="comment"
+          name="comment">
           </textarea>
         </mat-form-field>
     </form>
@@ -16,7 +17,7 @@
   <button mat-raised-button color="primary" (click)="postComment()" >Submit</button>
 </div>
 
-<div class="comment-container">
+<div class="comment-container" *ngIf="comments && comments.length">
   <mat-list class="comment-list" *ngFor="let comment of comments" >
     <mat-list-item>{{ comment }}</mat-list-item>
   </mat-list>
