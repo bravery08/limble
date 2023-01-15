@@ -7,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CommentsComponent implements OnInit {
 
+  comment = '';
+  comments: string[] = [];
+
+  postComment() {
+    this.comments.push(this.comment);
+    this.comment = '';
+  }
+
   constructor() { }
 
   ngOnInit(): void {
