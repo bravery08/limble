@@ -15,7 +15,9 @@ export class CommentsComponent implements OnInit {
     this.comment = '';
   }
 
-  constructor() { }
+  constructor() { 
+    this.comments = [];
+  }
 
   ngOnInit(): void {
   }
