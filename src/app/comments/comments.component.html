@@ -1,24 +1,26 @@
-<p>COMMENTS</p>
-<div class="form-container">
-    <form class="comments-input">  
-        <mat-form-field class="input-field">
-          <mat-label class="comment-label">Comments</mat-label>
-          <textarea 
-          matInput placeholder="Leave comments here..." 
-          style="color: white;"
-          [(ngModel)]="comment"
-          name="comment">
-          </textarea>
-        </mat-form-field>
-    </form>
-</div>
+<div class="page-container">
+  <p>COMMENTS</p>
+  <div class="form-container">
+      <form class="comments-input">  
+          <mat-form-field class="input-field">
+            <mat-label class="comment-label">Comments</mat-label>
+            <textarea 
+            matInput placeholder="Leave comments here..." 
+            style="color: white;"
+            [(ngModel)]="comment"
+            name="comment">
+            </textarea>
+          </mat-form-field>
+      </form>
+  </div>
 
-<div class="comment-button">
-  <button mat-raised-button color="primary" (click)="postComment()" >Submit</button>
-</div>
+  <div class="comment-button">
+    <button mat-raised-button color="primary" (click)="postComment()">Submit</button>
+  </div>
 
-<div class="comment-container" *ngIf="comments && comments.length">
-  <mat-list class="comment-list" *ngFor="let comment of comments" >
-    <mat-list-item>{{ comment }}</mat-list-item>
-  </mat-list>
+  <div class="comment-container" *ngIf="comments && comments.length">
+    <mat-list class="comment-list" *ngFor="let comment of comments" >
+      <mat-list-item>{{ comment }}</mat-list-item>
+    </mat-list>
+  </div>
 </div>
