@@ -4,12 +4,17 @@
       <form class="comments-input">  
           <mat-form-field class="input-field">
             <mat-label class="comment-label">Comments</mat-label>
-            <textarea 
-            matInput placeholder="Leave comments here..." 
-            style="color: white;"
-            [(ngModel)]="comment"
-            name="comment">
-            </textarea>
+            <input 
+              matInput placeholder="Leave comments here..." 
+              style="color: white;"
+              [formControl]="control"
+              [matAutocomplete]="auto">
+              name="comment"/>
+            <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions$ | async">
+                {{ option.name }}
+              </mat-option>
+            </mat-autocomplete>
           </mat-form-field>
       </form>
   </div>
