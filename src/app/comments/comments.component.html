@@ -11,8 +11,9 @@
               [matAutocomplete]="auto">
               name="comment"/>
             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-              <mat-option *ngFor="let option of filteredOptions$ | async">
-                {{ option.name }}
+              <mat-option *ngFor="let user of filteredUsers$ | async"
+                [value]="getComment$.value(user.name)">
+                {{ user.name }}
               </mat-option>
             </mat-autocomplete>
           </mat-form-field>
@@ -20,7 +21,7 @@
   </div>
 
   <div class="comment-button">
-    <button mat-raised-button color="primary" (click)="postComment()">Submit</button>
+    <button mat-raised-button color="primary" (click)="postComment()" [disabled]="!control.valid">Submit</button>
   </div>
 
   <div class="comment-container" *ngIf="comments && comments.length">
